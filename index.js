@@ -1,11 +1,8 @@
-//add new item.
 function shoppingListAddItem() {
     $('#js-shopping-list-form').submit(function (event) {
       event.preventDefault()
-  
-      //holds the value of item entered in listItem
+ 
       const listItem = $('#shopping-list-entry').val()
-      //if listItem does not equal nothing adds it within the html with all the formating.
       if (listItem !== "") {
         $('.shopping-list').append(`<li>
             <span class='shopping-item'>${listItem}</span>
@@ -20,12 +17,10 @@ function shoppingListAddItem() {
           </li>
           `)
       }
-      //resets the form input
       $('input[name=shopping-list-entry').val('')
     })
   }
-  
-  //check item and markout
+ 
   function markItem() {
     $('.shopping-list').on('click', '.shopping-item-toggle', function (event) {
       $(this)
@@ -34,8 +29,7 @@ function shoppingListAddItem() {
         .toggleClass('shopping-item__checked')
     })
   }
-  
-  //remove item
+ 
   function removeItem() {
     $('.shopping-list').on('click', '.shopping-item-delete', function (event) {
       $(this).closest('li').remove()
